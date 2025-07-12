@@ -1,9 +1,0 @@
-services:
-  postgres:
-    image: 'postgres:latest'
-    environment:
-      - 'POSTGRES_DB=socialdb'
-      - 'POSTGRES_PASSWORD=socialdb12'
-      - 'POSTGRES_USER=myuser'
-    ports:
-      - '5432'

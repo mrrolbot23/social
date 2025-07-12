@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: social
+  datasource:
+    url: jdbc:postgresql://localhost:5433/socialdb
+    username: socialdb
+    password: socialdb12
+    driver-class-name: org.postgresql.Driver
