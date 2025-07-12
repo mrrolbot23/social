@@ -1,0 +1,115 @@
+# ========================
+# General
+# ========================
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# ========================
+# OS-specific
+# ========================
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# ========================
+# IntelliJ IDEA
+# ========================
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# ========================
+# VSCode
+# ========================
+.vscode/
+
+# ========================
+# Yarn (Frontend)
+# ========================
+frontend/node_modules/
+frontend/.pnp/
+frontend/.pnp.js
+frontend/.yarn/cache/
+frontend/.yarn/unplugged/
+frontend/.yarn/build-state.yml
+frontend/.yarn/install-state.gz
+frontend/.yarn/patches/
+frontend/.yarn/plugins/
+frontend/.yarn/releases/
+frontend/.yarn/sdks/
+frontend/.yarn/versions/
+frontend/yarn-error.log
+frontend/yarn.lock # Optional: keep if you want lockfile in repo
+
+# ========================
+# React App (Frontend)
+# ========================
+frontend/build/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/.eslintcache
+frontend/.turbo/
+frontend/coverage/
+frontend/.parcel-cache/
+frontend/*.tsbuildinfo
+
+# ========================
+# Java / Spring Boot (Backend)
+# ========================
+backend/target/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/*.iml
+backend/logs/
+backend/hs_err_pid*.log
+
+# ========================
+# Maven
+# ========================
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+backend/pom.xml.versionsBackup
+
+# ========================
+# Gradle (if used instead of Maven)
+# ========================
+backend/.gradle/
+backend/build/
+backend/gradle-app.setting
+backend/gradlew
+backend/gradlew.bat
+backend/gradle-wrapper.jar
+
+# ========================
+# TypeScript
+# ========================
+**/*.tsbuildinfo
+
+# ========================
+# Docker
+# ========================
+**/Dockerfile
+**/docker-compose.yml
+**/docker-compose.*.yml
+**/.dockerignore
+**/.env.docker
+docker-volume/
+*.tar
+*.container
+*.pid
+
+# Ignore local Docker volumes and images (optional)
+volume-data/
