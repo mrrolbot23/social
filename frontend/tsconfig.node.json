@@ -12,6 +12,7 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
 
     /* Linting */
     "strict": true,
