@@ -2,7 +2,11 @@ import {Stack, Typography} from "@mui/material";
 import {type SubmitHandler, useForm} from "react-hook-form";
 import type {LoginInput} from "./type/LoginInput.ts";
 
-export default function LoginBox() {
+interface LoginBoxProps {
+    setShowLoginForm: (value: boolean) => void;
+}
+
+export default function LoginBox({setShowLoginForm}: LoginBoxProps) {
     const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm<LoginInput>();
 
     const onSubmit: SubmitHandler<LoginInput> = async (data) => {
@@ -10,14 +14,20 @@ export default function LoginBox() {
         console.log(data);
     }
 
+    const handleRegister = () => {
+        setShowLoginForm(false);
+    }
+
     return (
         <>
+            <Typography variant={"h3"} margin={1.5}>Login</Typography>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <Stack maxWidth={"380px"} my={2} mx={"auto"} gap={1}>
+                <Stack maxWidth={"380px"} mx={"auto"} gap={2}>
                     <input
+                        aria-label={"email input field"}
                         type={"text"}
-                        style={{height: "2rem"}}
-                        placeholder={"email"}
+                        style={{padding: "1rem", height: "1rem", border: "none", borderRadius: "5px"}}
+                        placeholder={"Email"}
                         {...register("email",
                             {
                                 required: "Email is required",
@@ -30,8 +40,9 @@ export default function LoginBox() {
                     />
                     {errors.email && <Typography variant={"body1"} color={"error"}>{errors.email.message}</Typography>}
                     <input
+                        aria-label={"password input field"}
                         type={"password"}
-                        style={{height: "2rem"}}
+                        style={{padding: "1rem", height: "1rem", border: "none", borderRadius: "5px"}}
                         placeholder={"Password"}
                         {...register("password",
                             {
@@ -43,8 +54,13 @@ export default function LoginBox() {
                             }
                         )}
                     />
-                    {errors.password && <Typography variant={"body1"} color={"error"}>{errors.password.message}</Typography>}
-                    <button type={"submit"}>{!isSubmitting? "Submit" : "Login In..."}</button>
+                    {errors.password &&
+                        <Typography variant={"body1"} color={"error"}>{errors.password.message}</Typography>}
+                    <Stack direction={"row"} gap={2} justifyContent={"right"}>
+                        <button aria-label={"registration button"} onClick={handleRegister}>Register</button>
+                        <button aria-label={"submit button"}
+                                type={"submit"}>{!isSubmitting ? "Submit" : "Login In..."}</button>
+                    </Stack>
                 </Stack>
             </form>
         </>
